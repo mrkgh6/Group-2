@@ -8,4 +8,6 @@ This project is using Huffington Post API to show data from polls for the Democr
 
 [jQuery](https://jquery.com/download/)
 
-[JSON](http://www.json.org/)
+[js](https://d3js.org/)
+
+The graph shows that Clinton, Sanders, and Bidon got 1st, 2nd, and 3rd respectively with every other candidate below those 3.
