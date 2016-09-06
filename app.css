@@ -12,10 +12,9 @@ body {
 #graph .bar {
     width: 0;
     height: 35px;
-<<<<<<< HEAD
-=======
+
     background-color: blue;
->>>>>>> jvbkw8
+
     margin: 5px;
     float: left;
 }
@@ -23,8 +22,4 @@ body {
   content: "";
   display: table;
   clear: both;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> jvbkw8
