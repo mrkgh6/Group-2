@@ -1,14 +1,13 @@
-# Group-2
-Mizzou Software Engineering Course
-# Democratic Presidential Race 2016 Polling Information
+# 2016 Presidential Primary Standings
 
-This project is using Huffington Post API to show data from polls for the Democratic Nominee for the President of the United States in 2016.
 
-[API](http://elections.huffingtonpost.com/pollster/api)
+This project uses The Huffington Post's Pollster API to show data from the 2016 presidential primaries.  The data for the leading candidates is then graphed.  The following tools were used:
 
-[jQuery](https://jquery.com/download/)
+  - [Pollster](http://elections.huffingtonpost.com/pollster/api)
 
-[js](https://d3js.org/)
+  - [jQuery](https://jquery.com/download/)
 
-The graph shows that Clinton, Sanders, and Bidon got 1st, 2nd, and 3rd respectively with every other candidate below those 3.
-It includes the pergcentage of the vote that each candidate recieved as well as in bar form. The graph is updated every time someone opens up the file.
+  - [d3.js](https://d3js.org/)
+
+The graph shows that Clinton, Sanders, and Biden got 1st, 2nd, and 3rd respectively while Trump, Cruz, and Romney lead for the Republican vote.  The graph is updated every time someone opens up the file.
+
