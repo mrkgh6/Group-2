@@ -12,9 +12,7 @@ body {
 #graph .bar {
     width: 0;
     height: 35px;
-
     background-color: blue;
-
     margin: 5px;
     float: left;
 }
