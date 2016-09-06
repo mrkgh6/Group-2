@@ -11,26 +11,32 @@
 >>>>>>> jvbkw8
 </head>
 <body>
-    
-    <div id="graph"></div>
-    
+
+
+  	<div id="left">
+		<div id="graph_gop"></div>
+	</div>
+	<div id="right">
+		<div id="graph_dnc"></div>
+	</div>
+  
     <script>
         
-        var url = "http://elections.huffingtonpost.com/pollster/api/charts/2016-national-gop-primary";
+        var url_gop = "http://elections.huffingtonpost.com/pollster/api/charts/2016-national-gop-primary";
         
-        $.ajax(url, {
+        $.ajax(url_gop, {
             dataType: "jsonp",
             jsonpCallback: "pollsterCallback",
             cache: true,
             success: function(data) {
                 
-                var candidateBar = d3.select("#graph").selectAll("div").data(data.estimates),
+                var candidateBar = d3.select("#graph_gop").selectAll("div").data(data.estimates),
                     candidateWrapper = candidateBar.enter().append("div").classed("group", true);
                 
                 candidateWrapper.append("div")
                     .classed("choice", true)
                     .text(function(candidate) {
-                        return candidate.choice + " " + candidate.value + "%";
+                        return candidate.choice + " " + Math.round(candidate.value * 100) / 100 + "%";
                     });
                 
                 candidateWrapper.append("div")
@@ -39,10 +45,44 @@
                     .duration(1000)
                     .style("width", function(candidate) {
                         return candidate.value * 10 + "px";
-                    });
+                    });                
+
+
                 
             }
+
+        });        
+        var url_dnc = "http://elections.huffingtonpost.com/pollster/api/charts/2016-national-democratic-primary";
+        
+        $.ajax(url_dnc, {
+            dataType: "jsonp",
+            cache: true,
+            success: function(data) {
+                
+                var candidateBar = d3.select("#graph_dnc").selectAll("div").data(data.estimates),
+                    candidateWrapper = candidateBar.enter().append("div").classed("group", true);
+                
+                candidateWrapper.append("div")
+                    .classed("choice", true)
+                    .text(function(candidate) {
+                        return candidate.choice + " " + Math.round(candidate.value * 100) / 100 + "%";
+                    });
+                
+                candidateWrapper.append("div")
+                    .classed("bar", true)
+                    .transition()
+                    .duration(1000)
+                    .style("width", function(candidate) {
+                        return candidate.value * 10 + "px";
+                    });                
+
+
+                
+            }
+
         });
     </script>
+
+
 </body>
 </html>
