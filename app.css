@@ -12,11 +12,7 @@ body {
 #graph .bar {
     width: 0;
     height: 35px;
-<<<<<<< HEAD
     background-color: blue;
-=======
-    background-color: coral;
->>>>>>> SociallyCompute/master
     margin: 5px;
     float: left;
 }
@@ -24,8 +20,4 @@ body {
   content: "";
   display: table;
   clear: both;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> SociallyCompute/master
