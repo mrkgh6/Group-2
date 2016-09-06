@@ -5,6 +5,7 @@
     <link href="app.css" rel="stylesheet" type="text/css">
     <script src="jquery-1.12.0.min.js"></script>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <script src="https://d3js.org/d3.v3.min.js"></script>
 =======
     <script src="d3.v3.min.js"></script>
@@ -25,18 +26,39 @@
         var url_gop = "http://elections.huffingtonpost.com/pollster/api/charts/2016-national-gop-primary";
         
         $.ajax(url_gop, {
+=======
+    <script src="d3.v3.min.js"></script>
+</head>
+<body>
+    
+    <div id="graph"></div>
+    
+    <script>
+        
+        var url = "http://elections.huffingtonpost.com/pollster/api/charts/2016-national-gop-primary";
+	var dem = "http://elections.huffingtonpost.com/pollster/api/charts/2016-national-democratic-primary";        
+        $.ajax(url, {
+>>>>>>> jvbkw8
             dataType: "jsonp",
             jsonpCallback: "pollsterCallback",
             cache: true,
             success: function(data) {
                 
+<<<<<<< HEAD
                 var candidateBar = d3.select("#graph_gop").selectAll("div").data(data.estimates),
+=======
+                var candidateBar = d3.select("#graph").selectAll("div").data(data.estimates),
+>>>>>>> jvbkw8
                     candidateWrapper = candidateBar.enter().append("div").classed("group", true);
                 
                 candidateWrapper.append("div")
                     .classed("choice", true)
                     .text(function(candidate) {
+<<<<<<< HEAD
                         return candidate.choice + " " + Math.round(candidate.value * 100) / 100 + "%";
+=======
+                        return candidate.choice + " " + candidate.value + "%";
+>>>>>>> jvbkw8
                     });
                 
                 candidateWrapper.append("div")
@@ -45,6 +67,7 @@
                     .duration(1000)
                     .style("width", function(candidate) {
                         return candidate.value * 10 + "px";
+<<<<<<< HEAD
                     });                
 
 
@@ -84,5 +107,12 @@
     </script>
 
 
+=======
+                    });
+                
+            }
+        });
+    </script>
+>>>>>>> jvbkw8
 </body>
 </html>
